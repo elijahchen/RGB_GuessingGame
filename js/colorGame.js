@@ -1,18 +1,11 @@
-var colors = [
-	"rgb(255, 0, 0)",
-	"rgb(255, 255, 0)",
-	"rgb(0, 255, 0)",
-	"rgb(0, 255, 255)",
-	"rgb(0, 0, 255)",
-	"rgb(255, 0, 255)"
-] //temp value, testing
+var colors = generateRandomColors(6);
 
 var squares = document.querySelectorAll(".square"); //Finds the class and stores it
-var pickColor = pickedColor(); //Function to determine correct color
+var pickedColor = pickColor(); //Function to determine correct color
 var colorDisplay = document.getElementById("colorDisplay"); //RGB header color
 var messageDisplay = document.querySelector("#message"); //Visual feedback: correct||wrong
 
-colorDisplay.textContent = pickColor;
+colorDisplay.textContent = pickedColor;
 
 for(var i = 0; i < squares.length; i++){
 	//Add initial colors to squares
@@ -23,7 +16,8 @@ for(var i = 0; i < squares.length; i++){
 		//Grab color of clicked squares
 		var clickedColor = this.style.background;
 		//Compare color to pickedColor
-		if(clickedColor === pickColor){
+		console.log(clickedColor, pickedColor);
+		if(clickedColor === pickedColor){
 			messageDisplay.textContent = "Correct!";
 			changeColors(clickedColor);
 		} else {
@@ -40,7 +34,29 @@ function changeColors(color){
 	}
 }
 
-function pickedColor(){
+function pickColor(){
 	var random = Math.floor(Math.random() * colors.length);
 	return colors[random];
+}
+
+function generateRandomColors(num){
+	//Make an array
+	var arr = [];
+	//Repeat num times
+	for(var i = 0; i < num; i++){
+		//Get random color and push to array
+		arr.push(randomColor());
+	}
+	//return the array
+	return arr;
+}
+
+function randomColor(){
+	//pick a red from 0-255
+	var r = Math.floor(Math.random() * 256);
+	//pick a green from 0-255
+    var g = Math.floor(Math.random() * 256);
+	//pick a blue from 0-255
+    var b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + ", " + g + ", " + b + ")";
 }
