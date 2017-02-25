@@ -25,3 +25,8 @@ h1 {
 	height: 30px;
 	color: black;
 }
+
+
+.selected { /*Class to toggle to invert/flip color when selected*/
+    background: blue;
+}

@@ -6,6 +6,18 @@ var colorDisplay = document.getElementById("colorDisplay"); //RGB header color
 var messageDisplay = document.querySelector("#message"); //Visual feedback: correct||wrong
 var resetButton = document.querySelector("#reset");
 var h1 = document.querySelector("h1");
+var easyButton = document.querySelector("#easyButton");
+var hardButton = document.querySelector("#hardButton");
+
+easyButton.addEventListener("click", function () {
+	easyButton.classList.add("selected");
+	hardButton.classList.remove("selected");
+});
+
+hardButton.addEventListener("click", function () {
+    hardButton.classList.add("selected");
+    easyButton.classList.remove("selected");
+});
 
 resetButton.addEventListener("click", function () {
 	//Generate all new colors
