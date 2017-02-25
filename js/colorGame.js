@@ -1,5 +1,5 @@
-var colors = generateRandomColors(6);
-
+var colors = generateRandomColors(numOfSquares);
+var numOfSquares = 6;
 var squares = document.querySelectorAll(".square"); //Finds the class and stores it
 var pickedColor = pickColor(); //Function to determine correct color
 var colorDisplay = document.getElementById("colorDisplay"); //RGB header color
@@ -12,16 +12,35 @@ var hardButton = document.querySelector("#hardButton");
 easyButton.addEventListener("click", function () {
 	easyButton.classList.add("selected");
 	hardButton.classList.remove("selected");
+    numOfSquares = 3;
+	colors = generateRandomColors(numOfSquares);
+	pickedColor = pickColor();
+	colorDisplay.textContent = pickedColor;
+	for(var i = 0; i < squares.length; i++){
+		if(colors[i]){
+			squares[i].style.background = colors[i];
+		} else {
+			squares[i].style.display = "none";
+		}
+	}
 });
 
 hardButton.addEventListener("click", function () {
     hardButton.classList.add("selected");
     easyButton.classList.remove("selected");
+    numOfSquares = 6;
+    colors = generateRandomColors(numOfSquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    for(var i = 0; i < squares.length; i++){
+		squares[i].style.background = colors[i];
+		squares[i].style.display = "block";
+    }
 });
 
 resetButton.addEventListener("click", function () {
 	//Generate all new colors
-	colors = generateRandomColors(6);
+	colors = generateRandomColors(numOfSquares);
 	//Picked a new random color from array
 	pickedColor = pickColor();
 	//Change colorDisplay to match picked color
