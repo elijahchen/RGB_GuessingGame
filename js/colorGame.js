@@ -5,6 +5,8 @@ var pickedColor = pickColor(); //Function to determine correct color
 var colorDisplay = document.getElementById("colorDisplay"); //RGB header color
 var messageDisplay = document.querySelector("#message"); //Visual feedback: correct||wrong
 
+var h1 = document.querySelector("h1");
+
 colorDisplay.textContent = pickedColor;
 
 for(var i = 0; i < squares.length; i++){
@@ -19,6 +21,7 @@ for(var i = 0; i < squares.length; i++){
 		console.log(clickedColor, pickedColor);
 		if(clickedColor === pickedColor){
 			messageDisplay.textContent = "Correct!";
+			h1.style.background = pickedColor;
 			changeColors(clickedColor);
 		} else {
 			this.style.background = "#232323";
