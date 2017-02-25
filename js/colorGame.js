@@ -4,8 +4,22 @@ var squares = document.querySelectorAll(".square"); //Finds the class and stores
 var pickedColor = pickColor(); //Function to determine correct color
 var colorDisplay = document.getElementById("colorDisplay"); //RGB header color
 var messageDisplay = document.querySelector("#message"); //Visual feedback: correct||wrong
-
+var resetButton = document.querySelector("#reset");
 var h1 = document.querySelector("h1");
+
+resetButton.addEventListener("click", function () {
+	//Generate all new colors
+	colors = generateRandomColors(6);
+	//Picked a new random color from array
+	pickedColor = pickColor();
+	//Change colorDisplay to match picked color
+	colorDisplay.textContent = pickedColor;
+	//Change colors of squares
+	for(var i = 0; i < squares.length; i++){
+		squares[i].style.background = colors[i];
+	}
+	h1.style.background = "#232323";
+});
 
 colorDisplay.textContent = pickedColor;
 
@@ -22,6 +36,7 @@ for(var i = 0; i < squares.length; i++){
 		if(clickedColor === pickedColor){
 			messageDisplay.textContent = "Correct!";
 			h1.style.background = pickedColor;
+			resetButton.textContent = "Play Again?";
 			changeColors(clickedColor);
 		} else {
 			this.style.background = "#232323";
@@ -63,3 +78,4 @@ function randomColor(){
     var b = Math.floor(Math.random() * 256);
     return "rgb(" + r + ", " + g + ", " + b + ")";
 }
+
