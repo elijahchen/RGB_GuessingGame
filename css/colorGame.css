@@ -1,32 +1,43 @@
 body {
-	background-color: #232323;
+    background-color: #232323;
+    margin: 0;
+    font-family: "Montserrat";
 }
 
 .square {
-	width: 30%;
-	background: purple;
-	padding-bottom: 30%;
-	float: left;
-	margin: 1.66%;
+    width: 30%;
+    background: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
 }
 
 #container {
-	max-width: 600px;
-	margin: 0 auto;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 h1 {
-	color: white;
+    color: white;
+    text-align: center;
+    font-weight: normal;
+    background: steelblue;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
 }
 
 #stripe {
-	background: white;
-	text-align: center;
-	height: 30px;
-	color: black;
+    background: white;
+    text-align: center;
+    height: 30px;
+    color: black;
 }
-
 
 .selected { /*Class to toggle to invert/flip color when selected*/
     background: blue;
+}
+
+#colorDisplay {
+    font-size: 200%;
 }
