@@ -20,7 +20,7 @@ body {
 
 #container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 h1 {
@@ -60,6 +60,7 @@ button {
     letter-spacing: 1px;
     font-size: inherit;
     transition: all 0.2s;
+    outline: none;
 
     /*Compatibility Support*/
     -webkit-transition: all 0.4s;
