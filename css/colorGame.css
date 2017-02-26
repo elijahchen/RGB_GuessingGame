@@ -10,6 +10,12 @@ body {
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    border-radius: 30%;
+    transition: background 0.4s;
+
+    /*Compatibility Support*/
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
 }
 
 #container {
@@ -53,4 +59,20 @@ button {
     color: steelblue;
     letter-spacing: 1px;
     font-size: inherit;
+    transition: all 0.2s;
+
+    /*Compatibility Support*/
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+button:hover{
+    color: white;
+    background: steelblue;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
+    letter-spacing: 2px;
 }
