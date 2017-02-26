@@ -25,6 +25,7 @@ h1 {
     line-height: 1.1;
     margin: 0;
     text-transform: uppercase;
+    padding: 20px 0;
 }
 
 #stripe {
@@ -35,9 +36,21 @@ h1 {
 }
 
 .selected { /*Class to toggle to invert/flip color when selected*/
-    background: blue;
+    background: steelblue;
+    color: white;
 }
 
 #colorDisplay {
     font-size: 200%;
+}
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
 }
